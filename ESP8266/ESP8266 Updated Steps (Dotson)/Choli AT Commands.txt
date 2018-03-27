@@ -1,0 +1,38 @@
+Wrist Client
+------------
+(SETUP)
+* AT+RST  //Reset Module
+* DELAY
+* AT+CWMODE_DEF=1  //Client mode
+* AT+CWJAP_DEF="CholiServ","1234567890"
+* AT+CIPSTART="TCP","192.168.5.1",1000 (after server made) or find IP with AT+CIFSR on server side
+(LOOP)
+*Do AT+CIPSEND=#_of_bytes_here
+* Then type message
+
+*AT+CIPCLOSE to end (add that transparent stuff to maintain TCP connection)
+
+
+
+Bot Server
+------------
+(SETUP)
+* AT+RST  //Reset Module
+* DELAY
+* AT+CWMODE_DEF=2 (or 3) Server mode (client/server mode)
+  (AT+CWSAP_DEF="CholiServ","1234567890",5,3)  //8 bytes for password
+>>MAKE SERVER
+* AT+CIPMUX=1
+* AT+CIPSERVER=1,1000
+
+>>
+
+
+(LOOP)
+
+
+
+
+============================
+**WHEN USING ARDUINO TO WRITE TO ESP, end with /r/n
+**Escape with \ before character (e.g. \")

@@ -1,0 +1,5 @@
+It takes a second. Wait.
+
+Type the SSID and pass as it with quotes around about. Delimit only with a comma.
+
+REMOVE ALL EXTRA WHITESPACE AROUND COMMAND!
